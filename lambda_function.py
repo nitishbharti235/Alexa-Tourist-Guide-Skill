@@ -79,16 +79,16 @@ def on_intent(event):
 #     lng=steps[i]['end_location']['lng']
 #     path=path+"|"+str(lat)+","+str(lng)
     
-#     path=path+"&size=1000x1000&key=AIzaSyDEqPOG9V-ZC2WonwlIGC4lwgcOYPhJEVM"
+#     path=path+"&size=1000x1000&key=API_KEY"
 
 def get_review(event):
     place = event['request']['intent']['slots']['place']['value']
     place.replace(" ", "+")
-    url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+place+"&inputtype=textquery&key=AIzaSyDEqPOG9V-ZC2WonwlIGC4lwgcOYPhJEVM"
+    url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input="+place+"&inputtype=textquery&key=API_KEY"
     res = requests.get(url)
     place_id = res.json()['candidates'][0]['place_id']
     # place_id="ChIJbf8C1yFxdDkR3n12P4DkKt0"
-    url="https://maps.googleapis.com/maps/api/place/details/json?place_id="+place_id+"&fields=reviews&key=AIzaSyDEqPOG9V-ZC2WonwlIGC4lwgcOYPhJEVM"
+    url="https://maps.googleapis.com/maps/api/place/details/json?place_id="+place_id+"&fields=reviews&key=API_KEY"
     response= requests.get(url)
     response_json = response.json()
     reviews = response_json['result']['reviews']
