@@ -1,4 +1,4 @@
-# Alexa-tourist-guide-skill
+# Alexa-Tourist-Guide-Skill
 This skill will guide tourist at historical sites in India.
 
 Some features are:- 
